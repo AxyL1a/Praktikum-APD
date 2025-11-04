@@ -1,0 +1,31 @@
+from tahap_input import *
+def tampil_menu_awal():
+    hapus()
+    print('==============================================')
+    print('        PROGRAM SERVIS KENDARAAN        ')
+    print('==============================================')
+    print('\n1. Login')
+    print('2. Register')
+    print('0. Keluar Aplikasi')
+def tampil_menu_utama(user_login):
+    hapus()
+    if user_login:
+        print(f"User: {user_login['username']} | Peran: {user_login['role']}")
+    print('\n========= MENU UTAMA =========')
+    print('\n--- LIHAT DATA ---')
+    print('4. Lihat Riwayat Servis Kendaraan')
+    print('5. Lihat Stok Suku Cadang')
+    print('6. Lihat Kendaraan yang Sedang Dikerjakan')
+    if user_login and user_login['role'] == 'admin':
+        print('\n--- INPUT DATA ---')
+        print('1. Tambah Pelanggan Baru')
+        print('2. Buat Work Order (WO) Baru')
+        print('3. Tambah Stok Suku Cadang')
+        print('\n--- UBAH DATA ---')
+        print('7. Ubah Status Servis')
+        print('8. Tambah Catatan Servis')
+        print('9. Ubah Data Pelanggan')
+        print('\n--- HAPUS DATA ---')
+        print('10. Hapus Suku Cadang')
+        print('11. Hapus (Batalkan) Servis')
+    print('\n0. LOGOUT')
